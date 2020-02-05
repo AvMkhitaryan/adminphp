@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>phpMyAdmin</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
+          integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="colone">
+            <div class="logo-img d-flex justify-content-center">
+                <img src="img/logo_left.png" alt="logo">
+            </div>
+            <div class="six-icons-div d-flex justify-content-center">
+                <img class="six-icons-div-img" src="img/b_home.png" alt="logo">
+                <img class="six-icons-div-img" src="img/s_loggoff.png" alt="logo">
+                <img class="six-icons-div-img" src="img/b_docs.png" alt="logo">
+                <img class="six-icons-div-img" src="img/b_sqlhelp.png" alt="logo">
+                <img class="six-icons-div-img" src="img/s_cog.png" alt="logo">
+                <img class="six-icons-div-img" src="img/s_reload.png" alt="logo">
+            </div>
+            <div class="left-div-two-buttons">
+                <button class="left-div-two-button-one">Недавнее</button>
+                <button class="left-div-two-button-two">Избранное</button>
+            </div>
+            <div class="db-divs">
+                <div class="create-db-divs">
+                    <a class="create-db-a" href="#"><img src="img/b_newdb.png" alt="logo">Создать БД</a>
+                </div>
+                <div id="old-db">
+                    <div id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="accordionHeadingOne">
+                                <div class="mb-0 row">
+                                    <div class="col-12 no-padding accordion-head">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#accordionBodyOne"
+                                           aria-expanded="false" aria-controls="accordionBodyOne"
+                                           class="collapsed ">
+                                            <div class="title-style d-flex justify-content-start">
+                                                <div class="title-style-div-one">
+                                                    <img class="img-icon" src="img/b_plus.png" alt="logo">
+                                                    <img class="img-icone" src="img/b_minus.png" alt="logo">
+                                                </div>
+                                                <div class="title-style-div-two">
+                                                    <img class="coll-db-logo" src="img/s_db.png" alt="logo">
+                                                </div>
+                                                <div class="info-text">
+                                                    Item 1
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="accordionBodyOne" class="collapse" role="tabpanel"
+                                 aria-labelledby="accordionHeadingOne" aria-expanded="false" data-parent="accordion">
+                                <div class="card-block col-12">
+                                    <div class="panel-group">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <div class="panel-title">
+                                                    <a data-toggle="collapse" href="#collapse1">
+                                                        <div class="title-style d-flex justify-content-start">
+                                                            <div class="title-style-div-one">
+                                                                <img class="img-icon" src="img/b_plus.png" alt="logo">
+                                                                <img class="img-icone" src="img/b_minus.png" alt="logo">
+                                                            </div>
+                                                            <div class="title-style-div-two">
+                                                                <img class="coll-db-logo" src="img/s_db.png" alt="logo">
+                                                            </div>
+                                                            <div class="info-text">
+                                                                Item 1
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div id="collapse1" class="panel-collapse collapse">
+                                                <div class="collapse-after-div">collapsid</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="accordionHeadingTwo">
+                                <div class="mb-0 row">
+                                    <div class="col-12 no-padding accordion-head">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#accordionBodyTwo"
+                                           aria-expanded="false" aria-controls="accordionBodyTwo"
+                                           class="collapsed ">
+                                            <div class="title-style d-flex justify-content-start">
+                                                <div class="title-style-div-one">
+                                                    <img class="img-icon" src="img/b_plus.png" alt="logo">
+                                                    <img class="img-icone" src="img/b_minus.png" alt="logo">
+                                                </div>
+                                                <div class="title-style-div-two">
+                                                    <img class="coll-db-logo" src="img/s_db.png" alt="logo">
+                                                </div>
+                                                <div class="info-text">
+                                                    Item 2
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="accordionBodyTwo" class="collapse" role="tabpanel"
+                                 aria-labelledby="accordionHeadingTwo" aria-expanded="false" data-parent="accordion">
+                                <div class="card-block col-12">
+                                    <p>Item 2</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" role="tab" id="accordionHeadingThree">
+                                <div class="mb-0 row">
+                                    <div class="col-12 no-padding accordion-head">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#accordionBodyThree"
+                                           aria-expanded="false" aria-controls="accordionBodyThree"
+                                           class="collapsed ">
+                                            <div class="title-style d-flex justify-content-start">
+                                                <div class="title-style-div-one">
+                                                    <img class="img-icon" src="img/b_plus.png" alt="logo">
+                                                    <img class="img-icone" src="img/b_minus.png" alt="logo">
+                                                </div>
+                                                <div class="title-style-div-two">
+                                                    <img class="coll-db-logo" src="img/s_db.png" alt="logo">
+                                                </div>
+                                                <div class="info-text">
+                                                    Item 3
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="accordionBodyThree" class="collapse" role="tabpanel"
+                                 aria-labelledby="accordionHeadingThree" aria-expanded="false" data-parent="accordion">
+                                <div class="card-block col-12">
+                                    <p>Accordion Item 3 - Body</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-10">
+            <div class="server-div d-flex">
+                <button class="server-div-icon"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
+                <div class="server-div-numbers">
+                    <img class="server-div-img" src="img/s_host.png" alt="logo">
+                    <a href="#">Сервер: 127.0.0.1</a>
+                </div>
+            </div>
+            <!--            <div class="d-flex">-->
+            <!--                <a href="#">Структура</a>-->
+            <!--                <a href="#">SQL</a>-->
+            <!--                <a href="#">Поиск</a>-->
+            <!--                <a href="#">Запрос&nbsp;по&nbsp;шаблону</a>-->
+            <!--                <a href="#">Экспорт</a>-->
+            <!--                <a href="#">Импорт</a>-->
+            <!--                <a href="#">Операции</a>-->
+            <!--                <a href="#">Привилегии</a>-->
+            <!--                <a href="#">Процедуры</a>-->
+            <!--                <a href="#">События</a>-->
+            <!--                <a href="#">Триггеры</a>-->
+            <!--                <a href="#">Слежение</a>-->
+            <!--                <a href="#">Дизайнер</a>-->
+            <!--                <a href="#">Центральные столбцы</a>-->
+            <!--            </div>-->
+            <nav id="nb-id" class="navbar navbar-expand-sm bg-light d-flex flex-wrap justify-content-center">
+                <a class="nav-a-style" href="#"><img src="img/s_db.png" alt="logo">Базы данных</a><a class="nav-a-style"
+                                                                                                     href="#"><img
+                    src="img/b_sql.png" alt="logo">Sql</a><a class="nav-a-style" href="#"><img src="img/s_status.png"
+                                                                                               alt="logo">Состояние</a><a
+                    class="nav-a-style" href="#"><img src="img/s_rights.png" alt="logo">Учетные записи пользователей</a><a
+                    class="nav-a-style" href="#"><img src="img/b_export.png" alt="logo">Экспорт</a><a
+                    class="nav-a-style" href="#"><img src="img/b_import.png" alt="logo">Импорт</a><a class="nav-a-style"
+                                                                                                     href="#"><img
+                    src="img/b_tblops.png" alt="logo">Настройки</a><a class="nav-a-style" href="#"><img
+                    src="img/s_replication.png" alt="logo">Репликация</a><a class="nav-a-style" href="#"><img
+                    src="img/s_link.png" alt="logo">Переменные</a><a class="nav-a-style" href="#"><img
+                    src="img/s_asci.png" alt="logo">Кодировки</a><a class="nav-a-style" href="#"><img
+                    src="img/b_engine.png" alt="logo">Типы таблиц</a><a class="nav-a-style" href="#"><img
+                    src="img/b_plugin.png" alt="logo">Расширения</a></nav>
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="divnumberone">
+                        <div class="col-7 toggle-div">
+                            <div class="col-divs">
+                                <h3 class="h3-style">Основные настройки</h3>
+                                <div class="d-flex h3-big-div">
+                                    <div>
+                                        <img src="img/s_asci.png" alt="logo">
+                                    </div>
+                                    <div>
+                                        <p>Сопоставление кодировки соединения</p>
+                                    </div>
+                                    <div>
+                                        <img src="img/b_help.png" alt="logo">
+                                    </div>
+                                    <div class="col-divs-Sel_Opt">
+                                        <label for="name">
+                                            <select id="name">
+                                                <option value="utf8mb4_1">utf8mb4_1_general_ci</option>
+                                                <option value="utf8mb4_2">utf8mb4_2</option>
+                                                <option value="utf8mb4_3">utf8mb4_3</option>
+                                                <option value="utf8mb4_4" selected>utf8mb4_4</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-divs">
+                                <h3 class="h3-style">Настройки внешнего вида</h3>
+                                <div class="d-flex h3-big-div">
+                                    <div>
+                                        <img src="img/s_lang.png" alt="logo">
+                                    </div>
+                                    <div>
+                                        <p>Язык-Language</p>
+                                    </div>
+                                    <div>
+                                        <img src="img/b_help.png" alt="logo">
+                                    </div>
+                                    <div class="col-divs-Sel_Opt">
+                                        <label for="leng">
+                                            <select id="leng">
+                                                <option value="English">English</option>
+                                                <option value="Armenian">Armenian</option>
+                                                <option value="Eussian" selected>Russina</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="d-flex h3-big-div">
+                                    <div>
+                                        <img src="img/s_theme.png" alt="logo">
+                                    </div>
+                                    <div>
+                                        <p>Тема:</p>
+                                    </div>
+                                    <div class="col-divs-Sel_Opt">
+                                        <label for="templet_style">
+                                            <select id="templet_style">
+                                                <option value="pmahomme" selected>pmahomme</option>
+                                                <option value="origin">Origin</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="d-flex h3-big-div">
+                                    <div>
+                                        <i class="fa fa-circle" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <p>Размер шрифта: </p>
+                                    </div>
+                                    <div>
+                                        <img src="img/b_help.png" alt="logo">
+                                    </div>
+                                    <div class="col-divs-Sel_Opt">
+                                        <label for="templet_size">
+                                            <select id="templet_size">
+                                                <option value="90%">90%</option>
+                                                <option value="85%">85%</option>
+                                                <option value="82%" selected>82%</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="d-flex h3-big-div">
+                                    <div>
+                                        <img src="img/b_tblops.png" alt="logo">
+                                    </div>
+                                    <div>
+                                        <a href="">Дополнительные настройки</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-5 toggle-div">
+                            <div class="col-divs">
+                                <h3 class="h3-style">Сервер баз данных</h3>
+                                <div class="d-flex h3-big-div">
+                                    <ul>
+                                        <li>Сервер: 127.0.0.1 via TCP/IP</li>
+                                        <li>Тип сервера: MariaDB</li>
+                                        <li>Соединение сервера: SSL не используетс</li>
+                                        <li>Версия сервера: 10.4.6-MariaDB - mariadb.org binary distribution
+                                        </li>
+                                        <li>Версия протокола: 10</li>
+                                        <li>Пользователь: root@localhost</li>
+                                        <li>Кодировка сервера: cp1252 West European (latin1)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-divs">
+                                <h3 class="h3-style">Веб-сервер</h3>
+                                <div class="d-flex h3-big-div">
+                                    <ul>
+                                        <li>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.3.9</li>
+                                        <li>Версия клиента базы данных: libmysql - mysqlnd 5.0.12-dev - 20150407
+                                            -
+                                            $Id: 7cc7cc96e675f6d72e5cf0f267f48e167c2abb23 $
+                                        </li>
+                                        <li>PHP расширение: mysqliДокументация curlДокументация
+                                            mbstringДокументация
+                                        </li>
+                                        <li>Версия PHP: 7.3.9</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="col-divs">
+                                <h3 class="h3-style">phpMyAdmin</h3>
+                                <div class="d-flex h3-big-div">
+                                    <ul>
+                                        <li>Информация о версии: 4.9.0.1, последняя стабильная версия: <a
+                                                href="">4.9.2</a>
+                                        </li>
+                                        <li><a href="">Документация</a></li>
+                                        <li><a href="">Официальная страница phpMyAdmin</a></li>
+                                        <li><a href="">Пожертвовать</a></li>
+                                        <li><a href="">Получить помощь</a></li>
+                                        <li><a href="">Список изменений</a></li>
+                                        <li><a href="">Лицензия</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js"
+        integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P"
+        crossorigin="anonymous"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

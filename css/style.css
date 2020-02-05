@@ -1,0 +1,82 @@
+.colone {
+    width: 230px;
+    height: 1000px;
+    background: #f2f2f2;
+}
+
+.logo-img {
+    padding: 15px 0;
+}
+
+.six-icons-div {
+    padding: 7px 0;
+}
+
+.six-icons-div-img {
+    margin: 0 2px;
+}
+
+.left-div-two-buttons > button {
+    font-size: 12px;
+}
+
+.create-db-divs {
+    padding: 5px 0 5px 8px;
+}
+
+.create-db-divs > a {
+    color: black;
+}
+
+.create-db-divs > a:hover {
+    color: black;
+}
+
+.create-db-divs > a > img {
+    padding-bottom: 5px;
+}
+
+#accordion > .card {
+    border: 0;
+    border-radius: 0;
+}
+
+#accordion > .card > .card-header {
+    padding: 0;
+    margin: 0;
+    background-color: #f2f2f2;
+    border-bottom: 0;
+}
+
+.info-text{
+    padding-top: 2px;
+    color: black;
+}
+.info-text:hover{
+    color: #9c9c9c;
+}
+.accordion-head>a{
+    text-decoration: none !important;
+}
+.title-style-div-one{
+    margin: 0px 3px 0 10px;
+}
+.title-style-div-two{
+    margin: 0 3px 0px 0;
+}
+.img-icon{
+    display: block;
+    margin: 6px 0 0 0;
+}.img-icone{
+    display: none;
+    margin: 6px 0 0 0;
+}
+.collapse-after-div{
+    margin-left: 30px;
+}
+.coltwo{
+    width: 87%;
+}
+.server-div{
+    background-color: #9c9c9c;
+}
