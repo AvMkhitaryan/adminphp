@@ -2,6 +2,7 @@
   "leftDbObject": [
     {
       "title": "databas",
+      "char": "utf-1",
       "child": [
         {
           "lt": "d124b",
@@ -15,6 +16,7 @@
     },
     {
       "title": "databasone",
+      "char": "utf-2",
       "child": [
         {
           "lt": "db12",
@@ -26,6 +28,24 @@
         },
         {
           "lt": "dbghg",
+          "info": "lorem te9465hlhkxtsdafasdf"
+        }
+      ]
+    },
+    {
+      "title": "dadf",
+      "char": "utf-3",
+      "child": [
+        {
+          "lt": "dbhdfg12",
+          "info": "lohjkdfghlhklr1234em textsdafasdf"
+        },
+        {
+          "lt": "ddfghbd",
+          "info": "lorhjklhsdfgsdfgem textsdafasdf"
+        },
+        {
+          "lt": "dbgdfghhg",
           "info": "lorem te9465hlhkxtsdafasdf"
         }
       ]

@@ -48,35 +48,141 @@
     border-bottom: 0;
 }
 
-.info-text{
+.info-text {
     padding-top: 2px;
     color: black;
 }
-.info-text:hover{
+
+.info-text:hover {
     color: #9c9c9c;
 }
-.accordion-head>a{
+
+.accordion-head > a {
     text-decoration: none !important;
 }
-.title-style-div-one{
+
+.title-style-div-one {
     margin: 0px 3px 0 10px;
 }
-.title-style-div-two{
+
+.title-style-div-two {
     margin: 0 3px 0px 0;
 }
-.img-icon{
+
+.img-icon {
     display: block;
     margin: 6px 0 0 0;
-}.img-icone{
+}
+
+.img-icone {
     display: none;
     margin: 6px 0 0 0;
 }
-.collapse-after-div{
+
+.collapse-after-div {
     margin-left: 30px;
 }
-.coltwo{
-    width: 87%;
+
+#rw > .col-10 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
 }
-.server-div{
+
+.server-div {
     background-color: #9c9c9c;
 }
+
+/*home*/
+.home-div-one, .home-div-two, .home-div-three, .home-div-fore, .home-div-five {
+    border: 1px solid #b8b8b8;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.home-div-one > h4, .home-div-two > h4, .home-div-three > h4, .home-div-fore > h4, .home-div-five > h4 {
+    background-color: #b8b8b8;
+    padding: 5px 2px;
+}
+
+.home-div-one-flex {
+    padding: 23px 5px;
+}
+
+.home-div-one-icon-one, .home-div-one-text, .home-div-one-select {
+    margin: 0 5px;
+}
+
+.home-div-two-one, .home-div-two-two, .home-div-two-three, .home-div-two-three {
+    margin: 20px 5px;
+}
+
+/*home*/
+
+/*create db*/
+.create-db-title {
+    padding: 8px 0;
+}
+
+.create-db-a {
+    padding: 10px 0px 5px 10px;
+}
+
+.input-div-one {
+    padding: 10px 0;
+}
+
+#db-name {
+    height: 25px;
+    margin-right: 10px;
+}
+
+.input-div-but {
+    height: 25px;
+    padding: 0px 5px 0 5px;
+    margin-left: 10px;
+}
+
+#tableFilter, #filter {
+    border: 1px solid #aaaaaa;
+    background-color: #eeeeee;
+
+}
+
+#tableFilter > legend, #filter>legend {
+    width: 110px;
+    border: 1px solid black;
+    margin-left: 15px;
+    padding: 0 5px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 5px 0.5px rgba(0, 0, 0, 0.52);
+    background-color: white;
+}
+
+.formelement {
+    padding: 10px 0;
+}
+
+#create-db > table {
+    margin: 10px 0;
+    width: 40%;
+}
+#create-db > table> thead > tr >th , #create-db > table>tbody>tr>td{
+    padding: 0;
+}
+.td-img{
+    margin: -2px 0 0 0;
+}
+.td-a-href{
+    padding-left: 5px;
+}
+/*create db*/
+
+/*open table*/
+#table-two >thead>tr{
+    padding: 5px 5px;
+}.table-two-tr>th{
+    padding: 5px 5px;
+}
+
+
+/*open table*/

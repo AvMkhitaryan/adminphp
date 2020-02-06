@@ -19,7 +19,7 @@ $.ajax({
     success: function (data) {
         data.leftDbObject.forEach((i, k) => {
             $("#accordion").append(`
-                <div class="card">
+                <div onclick="argum(${k+2})" class="card">
                     <div class="card-header" role="tab" id="accordionHeading${k}">
                         <div class="mb-0 row">
                             <div class="col-12 no-padding accordion-head">
