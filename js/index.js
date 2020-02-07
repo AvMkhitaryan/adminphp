@@ -23,41 +23,40 @@ $.ajax({
                     <div class="card-header" role="tab" id="accordionHeading${k}">
                         <div class="mb-0 row">
                             <div class="col-12 no-padding accordion-head">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#accordionBody${k}"
-                                           aria-expanded="false" aria-controls="accordionBodyOne"
-                                           class="collapsed ">
-                                            <div class="title-style d-flex justify-content-start">
-                                                <div class="title-style-div-one">
-                                                    <img class="img-icon" src="img/b_plus.png" alt="logo">
-                                                    <img class="img-icone" src="img/b_minus.png" alt="logo">
-                                                </div>
-                                                <div class="title-style-div-two">
-                                                    <img class="coll-db-logo" src="img/s_db.png" alt="logo">
-                                                </div>
-                                                <div class="info-text">
-                                                    ${i.title}
-                                                </div>
+                                <a data-toggle="collapse" data-parent="#accordion" href="#${i.idone}" aria-expanded="false" aria-controls="${i.idone}" class="collapsed ">
+                                    <div class="title-style d-flex justify-content-start">
+                                         <div class="title-style-div-one">
+                                              <img class="img-icon" src="img/b_plus.png" alt="logo">
+                                              <img class="img-icone" src="img/b_minus.png" alt="logo">
                                             </div>
+                                            <div class="title-style-div-two">
+                                              <img class="coll-db-logo" src="img/s_db.png" alt="logo">
+                                            </div>
+                                            <div class="info-text">
+                                               ${i.title}
+                                         </div>
+                                     </div>
                                 </a>
                             </div>
                         </div>
                      </div>
-                   <div id="accordionBody${k}" class="collapse app" role="tabpanel" aria-labelledby="accordionHeadingTwo" aria-expanded="false" data-parent="accordion" style="">
+                   <div id="${i.idone}" class="collapse app${k}" role="tabpanel" aria-labelledby="${i.idone}" aria-expanded="false" data-parent="accordion" style="">
                                 <div class="card-block col-12">
-                                  
+                                 
                                 </div>
                             </div>
                 `);
 
-            for (g=0;g<i.child.length;g++){
+            for (let g=0;g<i.child.length;g++){
                 // console.log(i.child[g]);
-                $(".app").append(`
-                        <div class="card-block col-12">
+                console.log(g.idtwo);
+                $('.app' + k).append(`
+                                        <div class="card-block col-12">
                                     <div class="panel-group">
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
-                                                    <a data-toggle="collapse" href="#collapse${g}">
+                                                    <a data-toggle="collapse" href="#collapse${i.child[g].idtwo}">
                                                         <div class="title-style d-flex justify-content-start">
                                                             <div class="title-style-div-one">
                                                                 <img class="img-icon" src="img/b_plus.png" alt="logo">
@@ -67,21 +66,55 @@ $.ajax({
                                                                 <img class="coll-db-logo" src="img/s_db.png" alt="logo">
                                                             </div>
                                                             <div class="info-text">
-                                                               
+
                                                               ${i.child[g].lt}
                                                             </div>
                                                         </div>
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div id="collapse${g}" class="panel-collapse collapse">
+                                            <div id="collapse${i.child[g].idtwo}" class="panel-collapse collapse">
                                                 <div class="collapse-after-div"> ${i.child[g].info}</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                `);
+                `)
+
             }
+            // for (g=0;g<i.child.length;g++){
+            //     console.log(i.child[g]);
+            //     $(".app").append(`
+            //             <div class="card-block col-12">
+            //                         <div class="panel-group">
+            //                             <div class="panel panel-default">
+            //                                 <div class="panel-heading">
+            //                                     <div class="panel-title">
+            //                                         <a data-toggle="collapse" href="#collapse${g}">
+            //                                             <div class="title-style d-flex justify-content-start">
+            //                                                 <div class="title-style-div-one">
+            //                                                     <img class="img-icon" src="img/b_plus.png" alt="logo">
+            //                                                     <img class="img-icone" src="img/b_minus.png" alt="logo">
+            //                                                 </div>
+            //                                                 <div class="title-style-div-two">
+            //                                                     <img class="coll-db-logo" src="img/s_db.png" alt="logo">
+            //                                                 </div>
+            //                                                 <div class="info-text">
+            //
+            //                                                   ${i.child[g].lt}
+            //                                                 </div>
+            //                                             </div>
+            //                                         </a>
+            //                                     </div>
+            //                                 </div>
+            //                                 <div id="collapse${g}" class="panel-collapse collapse">
+            //                                     <div class="collapse-after-div"> ${i.child[g].info}</div>
+            //                                 </div>
+            //                             </div>
+            //                         </div>
+            //                     </div>
+            //     `);
+            // }
         })
     }
 

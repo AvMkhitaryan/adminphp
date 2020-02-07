@@ -1625,5 +1625,112 @@ function argum(sum) {
 
     if (sum > 1){
         $('#create-db').children().remove();
+        $(`#create-db`).append(`<fieldset id="filter">
+                    <legend>Фильтры</legend>
+                    <div class="formelement">
+                        <label for="filterText">Содержит слово:</label>
+                        <input name="filterText" type="text" id="filterText" value="">
+                    </div>
+                </fieldset>
+                <table id="table-two" class="table table-striped">
+                    <thead >
+                    <tr class="table-two-tr">
+                        <th></th>
+                        <th>Таблица</th>
+                        <th>Действие</th>
+                        <th>Строки</th>
+                        <th>Тип</th>
+                        <th>Сравнение</th>
+                        <th>Размер</th>
+                        <th>Фрагментировано</th>
+                    </tr>
+                    </thead>
+                    <tbody id="append-table-two">
+                  
+                    </tbody>
+                </table>
+                <fieldset id="db-table-filt">
+                    <legend class="d-flex">
+                        <div class="img-cr-table">
+                        <img src="img/b_newdb.png" alt="logo"></div> <div class="d-flex cr-table-leg">Создать&nbsp;таблицу</div>
+                    </legend>
+                    <div class="d-flex">
+                        <label for="new-tb-name" class="d-flex">
+                            Имя: <input id="new-tb-name" type="text" name="new-tb-name">
+                        </label>
+                        <label for="new-tb-num" class="d-flex">
+                            Количество столбцов: <input id="new-tb-num" type="text" name="new-tb-num">
+                        </label>
+
+                    </div>
+                </fieldset>
+                <div class="cr-tb-button">
+                    <button>Вперёд</button>
+                </div>`);
+        $.ajax({
+            url: "json/indexone.json",
+            type: "GET",
+            dataType: "json",
+            success:function (data) {
+                var dbnum=sum-2;
+                data.leftDbObject.forEach((j,t)=>{
+                    if (dbnum===t){
+                        for (let a=0;a<j.child.length;a++){
+                            // console.log(j.child[a].lt);
+                            $('#append-table-two').append(`
+                                  <tr>
+                                <td><input type="checkbox" name="chek-two" value="vvv"></td>
+                                <td>${j.child[a].lt}</td>
+                                <td class="d-flex">
+                                    <a href="#" class="d-flex">
+                                        <div class="tb-img-div">
+                                        <img src="img/b_no_favorite.png" alt="logo"></div>
+                                    </a>
+                                    <a href="#" class="d-flex">
+                                        <div class="tb-img-div">
+                                            <img src="img/b_import.png" alt="logo"></div>
+                                        Обзор
+                                    </a>
+                                    <a href="#" class="d-flex">
+                                        <div class="tb-img-div">
+                                            <img src="img/b_props.png" alt="logo"></div>
+                                        Структура
+                                    </a>
+                                    <a href="#" class="d-flex">
+                                        <div class="tb-img-div">
+                                            <img src="img/b_select.png" alt="logo"></div>
+                                        Поиск
+                                    </a>
+                                    <a href="#" class="d-flex">
+                                        <div class="tb-img-div">
+                                            <img src="img/b_insrow.png" alt="logo">
+                                        </div>
+                                        Вставить
+                                    </a>
+                                    <a href="#" class="d-flex">
+                                        <div class="tb-img-div">
+                                            <img src="img/bd_empty.png" alt="logo">
+                                        </div>
+                                        Очистить
+                                    </a>
+                                    <a href="#" class="d-flex">
+                                        <div class="tb-img-div">
+                                            <img src="img/b_drop.png" alt="logo">
+                                        </div>
+                                        Удалить
+                                    </a>
+                                </td>
+                                <td>7</td>
+                                <td>innoDb</td>
+                                <td style="padding: 5px 5px">${j.child[a].charset}</td>
+                                <td>32 КиБ</td>
+                                <td>-</td>
+                            </tr>
+                            `);
+                        }
+                    }
+                })
+            }
+        })
     }
 }

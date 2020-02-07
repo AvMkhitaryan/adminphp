@@ -1,0 +1,25 @@
+{
+  "leftDbObjectTable": [
+    {
+      "id": "12",
+      "name": "valod",
+      "email": "za@bk.ru",
+      "password": "123456789"
+    },{
+      "id": "4512",
+      "name": "val",
+      "email": "zadsaf@bk.ru",
+      "password": "126789dsfg"
+    },{
+      "id": "1782",
+      "name": "valosdfgd",
+      "email": "zadsfg@bk.ru",
+      "password": "1dfg"
+    },{
+      "id": "125",
+      "name": "vasdfglod",
+      "email": "z5522a@bk.ru",
+      "password": "12asxfg6789"
+    }
+  ]
+}

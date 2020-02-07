@@ -148,7 +148,7 @@
 
 }
 
-#tableFilter > legend, #filter>legend {
+#tableFilter > legend, #filter > legend {
     width: 110px;
     border: 1px solid black;
     margin-left: 15px;
@@ -166,23 +166,136 @@
     margin: 10px 0;
     width: 40%;
 }
-#create-db > table> thead > tr >th , #create-db > table>tbody>tr>td{
-    padding: 0;
+
+#create-db > table > thead > tr > th, #create-db > table > tbody > tr > td {
+    padding: 2px 15px;
 }
-.td-img{
+
+.td-img {
     margin: -2px 0 0 0;
 }
-.td-a-href{
+
+.td-a-href {
     padding-left: 5px;
 }
+
 /*create db*/
 
 /*open table*/
-#table-two >thead>tr{
-    padding: 5px 5px;
-}.table-two-tr>th{
+#table-two > thead > tr {
     padding: 5px 5px;
 }
 
+.table-two-tr > th {
+    padding: 5px 5px;
+}
+
+#db-table-filt {
+    border: 1px solid #aaaaaa;
+    padding: 24px 0;
+    background-color: #eeeeee;
+}
+
+#db-table-filt > legend {
+    width: 150px;
+    border: 1px solid black;
+    margin-left: 15px;
+    padding: 0 5px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 5px 0.5px rgba(0, 0, 0, 0.52);
+    background-color: white;
+}
+
+.cr-table-leg {
+    font-size: 15px;
+    padding: 0 0 0 0;
+}
+
+.img-cr-table {
+    margin: -10px 0 0 0;
+}
+
+.cr-tb-button {
+    background-color: #eeeeee;
+    height: 80px;
+    border: 1px solid #aaaaaa;
+}
+
+.cr-tb-button > button {
+    float: right;
+    margin-top: 40px;
+    margin-right: 9px;
+}
 
 /*open table*/
+
+/*string-display*/
+
+.string-display-big {
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+}
+
+.string-display-div-one {
+    padding: 5px 5px;
+    background-color: #ecf7a4;
+}
+
+.string-display-chek {
+    margin: 4px 7px 0px 4px;
+    color: green;
+}
+
+.string-display-div-two {
+    padding: 5px;
+    background-color: #e5e5e5;
+}
+
+.string-display-div-two > a {
+    margin-right: 7px;
+}
+
+.string-display-table-name {
+    margin-left: 5px;
+}
+
+.string-display-div-three {
+    background-color: #d4dce3;
+    padding: 5px;
+}
+
+.string-display-big-two {
+    padding: 5px 5px;
+    width: 66%;
+    height: auto;
+    margin: 10px 0;
+}
+
+.string-display-big-two:hover {
+    background-color: #818990;
+}
+
+.string-display-big-two-one, .string-display-big-two-two, .string-display-big-two-three {
+    padding: 8px 0;
+    margin: 0px 4px 0 4px;
+}
+
+.string-display-big-two-three {
+    padding: 4px 0 0 0;
+    margin: 0px 4px 0 4px;
+}
+
+.string-display-big-two-fore {
+    padding: 6px 0 0 0;
+    margin: 0px 4px 0 4px;
+}
+
+.table-name-th-chek {
+    padding: 0 !important;
+    width: 150px !important;
+}
+#tab-for-table{
+    width: 60%!important;
+}
+
+/*string-display*/

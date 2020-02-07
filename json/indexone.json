@@ -1,52 +1,86 @@
 {
   "leftDbObject": [
     {
-      "title": "databas",
+      "title": "1",
       "char": "utf-1",
+      "idone":"as569",
       "child": [
         {
-          "lt": "d124b",
-          "info": "lorem9+544 textsdafasdf"
+          "lt": "1.1",
+          "info": "lorem9+544 textsdafasdf",
+          "charset": "utf-8-gener",
+          "type": "db1.1",
+          "idtwo": "as789"
         },
         {
-          "lt": "db36",
-          "info": "lorem9555 textsdafasdf"
+          "lt": "1.2",
+          "info": "lorem9555 textsdafasdf",
+          "charset": "utf-16-gener",
+          "type": "db1.2",
+          "idtwo": "as456"
         }
       ]
     },
     {
-      "title": "databasone",
+      "title": "2",
       "char": "utf-2",
+      "idone":"as5689",
       "child": [
         {
-          "lt": "db12",
-          "info": "lohjklhklr1234em textsdafasdf"
+          "lt": "2.1",
+          "info": "lohjklhklr1234em textsdafasdf",
+          "charset": "utf-25-gener",
+          "type": "db2.1",
+          "idtwo": "as369"
         },
         {
-          "lt": "dbd",
-          "info": "lorhjklhsdfgsdfgem textsdafasdf"
+          "lt": "2.2",
+          "info": "lorhjklhsdfgsdfgem textsdafasdf",
+          "charset": "utf-18-gener",
+          "type": "db2.2",
+          "idtwo": "as34"
         },
         {
-          "lt": "dbghg",
-          "info": "lorem te9465hlhkxtsdafasdf"
+          "lt": "2.3",
+          "info": "lorem te9465hlhkxtsdafasdf",
+          "charset": "utf-32-gener",
+          "type": "db2.3",
+          "idtwo": "as78478999"
         }
       ]
     },
     {
-      "title": "dadf",
+      "title": "3",
       "char": "utf-3",
+      "idone":"as56989",
       "child": [
         {
-          "lt": "dbhdfg12",
-          "info": "lohjkdfghlhklr1234em textsdafasdf"
+          "lt": "3.1",
+          "info": "lohjkdfghlhklr1234em textsdafasdf",
+          "charset": "utf-5-gener",
+          "type": "db3.1",
+          "idtwo": "as736989"
         },
         {
-          "lt": "ddfghbd",
-          "info": "lorhjklhsdfgsdfgem textsdafasdf"
+          "lt": "3.2",
+          "info": "lorhjklhsdfgsdfgem textsdafasdf",
+          "charset": "utf-66-gener",
+          "type": "db3.2",
+          "idtwo": "as78145699"
         },
         {
-          "lt": "dbgdfghhg",
-          "info": "lorem te9465hlhkxtsdafasdf"
+          "lt": "3.3",
+          "info": "lorem te9465hlhkxtsdafasdf",
+          "charset": "utf-8-gener",
+          "type": "db3.3",
+          "idtwo": "as73497889"
+
+        },{
+          "lt": "3.4",
+          "info": "lorem afasdf",
+          "charset": "utf-9-gener",
+          "type": "db3.4",
+          "idtwo": "as7898984489"
         }
       ]
     }
