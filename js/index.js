@@ -17,10 +17,11 @@ $.ajax({
     type: "GET",
     dataType: "json",
     success: function (data) {
+        let keyNum=[0];
         data.leftDbObject.forEach((i, k) => {
             $("#accordion").append(`
-                <div onclick="argum(${k+2})" class="card">
-                    <div class="card-header" role="tab" id="accordionHeading${k}">
+                <div  class="card">
+                    <div onclick="argum(${k+2})" class="card-header" role="tab" id="accordionHeading${k}">
                         <div class="mb-0 row">
                             <div class="col-12 no-padding accordion-head">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#${i.idone}" aria-expanded="false" aria-controls="${i.idone}" class="collapsed ">
@@ -41,20 +42,22 @@ $.ajax({
                         </div>
                      </div>
                    <div id="${i.idone}" class="collapse app${k}" role="tabpanel" aria-labelledby="${i.idone}" aria-expanded="false" data-parent="accordion" style="">
-                                <div class="card-block col-12">
-                                 
-                                </div>
+                                
                             </div>
                 `);
 
+
             for (let g=0;g<i.child.length;g++){
-                // console.log(i.child[g]);
-                console.log(g.idtwo);
-                $('.app' + k).append(`
-                                        <div class="card-block col-12">
+
+                let numb=keyNum[keyNum.length - 1];
+
+                let lastItem = keyNum[keyNum.length - 1];
+                keyNum.push(lastItem+1);
+
+                $('.app' + k).append(`<div class="card-block col-12">
                                     <div class="panel-group">
                                         <div class="panel panel-default">
-                                            <div class="panel-heading">
+                                            <div onclick="cl(${numb})" class="panel-heading">
                                                 <div class="panel-title">
                                                     <a data-toggle="collapse" href="#collapse${i.child[g].idtwo}">
                                                         <div class="title-style d-flex justify-content-start">

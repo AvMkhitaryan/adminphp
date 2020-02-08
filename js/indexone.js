@@ -1661,8 +1661,7 @@ function argum(sum) {
                         <label for="new-tb-num" class="d-flex">
                             Количество столбцов: <input id="new-tb-num" type="text" name="new-tb-num">
                         </label>
-
-                    </div>
+                       </div>
                 </fieldset>
                 <div class="cr-tb-button">
                     <button>Вперёд</button>

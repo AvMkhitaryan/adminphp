@@ -6,6 +6,7 @@
       "idone":"as569",
       "child": [
         {
+          "clnum":"0",
           "lt": "1.1",
           "info": "lorem9+544 textsdafasdf",
           "charset": "utf-8-gener",
@@ -13,6 +14,7 @@
           "idtwo": "as789"
         },
         {
+          "clnum":"1",
           "lt": "1.2",
           "info": "lorem9555 textsdafasdf",
           "charset": "utf-16-gener",
@@ -27,6 +29,7 @@
       "idone":"as5689",
       "child": [
         {
+          "clnum":"2",
           "lt": "2.1",
           "info": "lohjklhklr1234em textsdafasdf",
           "charset": "utf-25-gener",
