@@ -42,7 +42,7 @@ $.ajax({
                         </div>
                      </div>
                    <div id="${i.idone}" class="collapse app${k}" role="tabpanel" aria-labelledby="${i.idone}" aria-expanded="false" data-parent="accordion" style="">
-                                
+                                <div onclick="crNewTable(${k})" class="accordion-new-button col-12 d-flex"><div class="accordion-new-button-img"><img src="img/b_export.png" alt="logo"></div><div class="accordion-new-button-text">NEW</div</div>
                             </div>
                 `);
 
