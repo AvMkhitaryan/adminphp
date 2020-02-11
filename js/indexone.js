@@ -1625,7 +1625,8 @@ function argum(sum) {
 
     if (sum > 1){
         $('#create-db').children().remove();
-        $(`#create-db`).append(`<fieldset id="filter">
+        $(`#create-db`).append(`
+                <fieldset id="filter">
                     <legend>Фильтры</legend>
                     <div class="formelement">
                         <label for="filterText">Содержит слово:</label>

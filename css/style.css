@@ -403,9 +403,9 @@
 #cr-new-tab-elemets-thead:hover, #cr-new-tab-elemets-tbody:hover{
     background-color: #b6c6d7;
 }
-select{
-    width: 100%;
-}
+/*select{*/
+/*    width: 100%;*/
+/*}*/
 .cr-new-tab-elemets-tbody-tr>td{
     padding: 0 !important;
 }

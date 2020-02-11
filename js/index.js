@@ -17,11 +17,11 @@ $.ajax({
     type: "GET",
     dataType: "json",
     success: function (data) {
-        let keyNum=[0];
+        let keyNum = [0];
         data.leftDbObject.forEach((i, k) => {
             $("#accordion").append(`
                 <div  class="card">
-                    <div onclick="argum(${k+2})" class="card-header" role="tab" id="accordionHeading${k}">
+                    <div onclick="argum(${k + 2});" class="card-header collap" role="tab" id="accordionHeading${k}" data-id="${i.idone}">
                         <div class="mb-0 row">
                             <div class="col-12 no-padding accordion-head">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#${i.idone}" aria-expanded="false" aria-controls="${i.idone}" class="collapsed ">
@@ -36,7 +36,7 @@ $.ajax({
                                             <div class="info-text">
                                                ${i.title}
                                          </div>
-                                     </div>
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -47,53 +47,20 @@ $.ajax({
                 `);
 
 
-            for (let g=0;g<i.child.length;g++){
-
-                let numb=keyNum[keyNum.length - 1];
-
-                let lastItem = keyNum[keyNum.length - 1];
-                keyNum.push(lastItem+1);
-
-                $('.app' + k).append(`<div class="card-block col-12">
-                                    <div class="panel-group">
-                                        <div class="panel panel-default">
-                                            <div onclick="cl(${numb})" class="panel-heading">
-                                                <div class="panel-title">
-                                                    <a data-toggle="collapse" href="#collapse${i.child[g].idtwo}">
-                                                        <div class="title-style d-flex justify-content-start">
-                                                            <div class="title-style-div-one">
-                                                                <img class="img-icon" src="img/b_plus.png" alt="logo">
-                                                                <img class="img-icone" src="img/b_minus.png" alt="logo">
-                                                            </div>
-                                                            <div class="title-style-div-two">
-                                                                <img class="coll-db-logo" src="img/s_db.png" alt="logo">
-                                                            </div>
-                                                            <div class="info-text">
-
-                                                              ${i.child[g].lt}
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div id="collapse${i.child[g].idtwo}" class="panel-collapse collapse">
-                                                <div class="collapse-after-div"> ${i.child[g].info}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                `)
-
-            }
-            // for (g=0;g<i.child.length;g++){
-            //     console.log(i.child[g]);
-            //     $(".app").append(`
-            //             <div class="card-block col-12">
+            // for (let g = 0; g < i.child.length; g++) {
+            //
+            //     let numb = keyNum[keyNum.length - 1];
+            //
+            //     let lastItem = keyNum[keyNum.length - 1];
+            //     keyNum.push(lastItem + 1);
+            //
+            //     $('.app' + k).append(`
+            //     <div class="card-block col-12">
             //                         <div class="panel-group">
             //                             <div class="panel panel-default">
-            //                                 <div class="panel-heading">
+            //                                 <div onclick="cl(${numb})" class="panel-heading">
             //                                     <div class="panel-title">
-            //                                         <a data-toggle="collapse" href="#collapse${g}">
+            //                                         <a data-toggle="collapse" href="#collapselast${numb}">
             //                                             <div class="title-style d-flex justify-content-start">
             //                                                 <div class="title-style-div-one">
             //                                                     <img class="img-icon" src="img/b_plus.png" alt="logo">
@@ -110,15 +77,83 @@ $.ajax({
             //                                         </a>
             //                                     </div>
             //                                 </div>
-            //                                 <div id="collapse${g}" class="panel-collapse collapse">
+            //                                 <div id="collapselast${numb}" class="panel-collapse collapse">
             //                                     <div class="collapse-after-div"> ${i.child[g].info}</div>
             //                                 </div>
             //                             </div>
             //                         </div>
-            //                     </div>
-            //     `);
+            //                     </div>`)
             // }
         })
     }
+});
 
+$(document).on('click', '.collap', function () {
+    // alert(1213)
+    let id = $(this).attr('data-id');
+    // console.log(id);
+    $.ajax({
+        url: "json/collapsedlast.json",
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            $('.remove-data-' + id).remove();
+            data.table.forEach((i, k) => {
+                // console.log(i.db_id);
+                if (id == i.db_id) {
+                    // $("#"+ id).children().remove();
+                    $("#" + id).append(`
+                           <div class="card-block col-12 remove-data-${id}">
+                                    <div class="panel-group " data-id="${i.id}">
+                                        <div class="panel panel-default">
+                                            <div onclick="cl(${k})" class="panel-heading">
+                                                <div class="panel-title">
+                                                    <a data-toggle="collapse" href="#${i.id}">
+                                                        <div class="title-style d-flex justify-content-start">
+                                                            <div class="title-style-div-one">
+                                                                <img class="img-icon" src="img/b_plus.png" alt="logo">
+                                                                <img class="img-icone" src="img/b_minus.png" alt="logo">
+                                                            </div>
+                                                            <div class="title-style-div-two">
+                                                                <img class="coll-db-logo" src="img/s_db.png" alt="logo">
+                                                            </div>
+                                                            <div class="info-text">
+
+                                                              ${i.name}
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div id="${i.id}" class="panel-collapse collapse" >
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    `)
+                }
+            })
+        }
+    });
+});
+
+$(document).on('click', '.panel-group', function () {
+    let idtwo = $(this).attr('data-id');
+    // let append = $(this).attr('id');
+    // console.log(append);
+    console.log(idtwo);
+    $.ajax({
+        url: "json/indexit.json",
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            data.indexObject.forEach((p) => {
+                if (idtwo == p.db_id) {
+                    // console.log(p.name);
+                    $('#'+idtwo).append(` <p>helloa</p>`)
+                }
+            })
+        }
+    })
 });
