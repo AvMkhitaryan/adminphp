@@ -10,7 +10,6 @@ $(document).ready(function () {
         }
     })
 
-});
 
 $.ajax({
     url: "json/indexone.json",
@@ -85,24 +84,26 @@ $.ajax({
             //                     </div>`)
             // }
         })
+        setClickOnCollapse();
+
     }
 });
-
-$(document).on('click', '.collap', function () {
-    // alert(1213)
-    let id = $(this).attr('data-id');
-    // console.log(id);
-    $.ajax({
-        url: "json/collapsedlast.json",
-        type: "GET",
-        dataType: "json",
-        success: function (data) {
-            $('.remove-data-' + id).remove();
-            data.table.forEach((i, k) => {
-                // console.log(i.db_id);
-                if (id == i.db_id) {
-                    // $("#"+ id).children().remove();
-                    $("#" + id).append(`
+function setClickOnCollapse() {
+    $('.collap').on('click', function () {
+        // alert(1213)
+        let id = $(this).attr('data-id');
+        console.log(id);
+        $.ajax({
+            url: "json/collapsedlast.json",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                $('.remove-data-' + id).remove();
+                data.table.forEach((i, k) => {
+                    // console.log(i.db_id);
+                    if (id == i.db_id) {
+                        // $("#"+ id).children().remove();
+                        $("#" + id).append(`
                            <div class="card-block col-12 remove-data-${id}">
                                     <div class="panel-group " data-id="${i.id}">
                                         <div class="panel panel-default">
@@ -125,35 +126,43 @@ $(document).on('click', '.collap', function () {
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div id="${i.id}" class="panel-collapse collapse" >
-                                               
+                                            <div id="${i.id}" class="panel-collapse collapse append-divs" >
+                                              
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                     `)
-                }
-            })
-        }
+                    }
+                })
+            }
+        });
     });
-});
+}
 
 $(document).on('click', '.panel-group', function () {
     let idtwo = $(this).attr('data-id');
-    // let append = $(this).attr('id');
-    // console.log(append);
-    console.log(idtwo);
+    // let appe = $('.append-divs').attr('id');
+    // console.log(appe);
+    // console.log(idtwo);
     $.ajax({
         url: "json/indexit.json",
         type: "GET",
         dataType: "json",
         success: function (data) {
-            data.indexObject.forEach((p) => {
+            $('.remove-zsd'+idtwo).remove();
+            data.indexObject.forEach((p,k) => {
+                // console.log(p);
                 if (idtwo == p.db_id) {
                     // console.log(p.name);
-                    $('#'+idtwo).append(` <p>helloa</p>`)
+                    $('#'+idtwo).append(` <div class="indexit-json-info remove-zsd${idtwo}">
+                                            <div>${p.nameone}</div>
+                                            <div>${p.nametwo}</div>
+                                        </div>`)
                 }
             })
         }
     })
+});
+
 });
