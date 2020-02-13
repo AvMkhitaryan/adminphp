@@ -64,7 +64,9 @@
 .title-style-div-one {
     margin: 0px 3px 0 10px;
 }
-
+.icon-load{
+    /*display: none;*/
+}
 .title-style-div-two {
     margin: 0 3px 0px 0;
 }
@@ -73,8 +75,19 @@
     display: block;
     margin: 6px 0 0 0;
 }
+.spiner-icon{
+    color: black;
+}
+.img-icon-two{
+    display: block;
+    margin: 6px 0 0 0;
+}
 
 .img-icone {
+    display: none;
+    margin: 6px 0 0 0;
+}
+.img-icone-two{
     display: none;
     margin: 6px 0 0 0;
 }
