@@ -142,7 +142,6 @@
 <!--            </div>-->
 
 
-
 <!--            <div class="container-fluid">-->
 <!--                <div class="row">-->
 <!--                    <div id="divnumberone">-->
@@ -1446,31 +1445,6 @@
 <!--                </div>-->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="string-display-big">
     <div class="d-flex string-display-div-one">
         <i class="fa fa-check string-display-chek" aria-hidden="true"></i>
@@ -1623,16 +1597,24 @@
 <fieldset class="print_ignore-one">
     <legend>Использование результатов запроса</legend>
     <a href="#" id="printView" target="print_view"><span class="nowrap">
-                        <img src="img/bd_empty.png" title="Печать" alt="Печать" class="icon ic_b_print">&nbsp;Печать</span></a>
-    <a href="#" id="copyToClipBoard"><span class="nowrap"><img src="img/b_insrow.png" title="В буфер обмена" alt="В буфер обмена" class="icon ic_b_insrow">&nbsp;В буфер обмена</span></a><a href="tbl_export.php" data-post="db=regist&amp;table=table&amp;printview=1&amp;sql_query=SELECT+%2A+FROM+%60table%60&amp;single_table=true&amp;unlim_num_rows=7"><span class="nowrap"><img src="img/b_export.png" title="Экспорт" alt="Экспорт" class="icon ic_b_tblexport">&nbsp;Экспорт</span></a>
-    <a href="tbl_chart.php" ><span class="nowrap"><img src="img/s_status.png" title="Отобразить график" alt="Отобразить график" class="icon ic_b_chart">&nbsp;Отобразить график</span></a>
+                        <img src="img/bd_empty.png" title="Печать" alt="Печать"
+                             class="icon ic_b_print">&nbsp;Печать</span></a>
+    <a href="#" id="copyToClipBoard"><span class="nowrap"><img src="img/b_insrow.png" title="В буфер обмена"
+                                                               alt="В буфер обмена" class="icon ic_b_insrow">&nbsp;В буфер обмена</span></a><a
+        href="tbl_export.php"
+        data-post="db=regist&amp;table=table&amp;printview=1&amp;sql_query=SELECT+%2A+FROM+%60table%60&amp;single_table=true&amp;unlim_num_rows=7"><span
+        class="nowrap"><img src="img/b_export.png" title="Экспорт" alt="Экспорт" class="icon ic_b_tblexport">&nbsp;Экспорт</span></a>
+    <a href="tbl_chart.php"><span class="nowrap"><img src="img/s_status.png" title="Отобразить график"
+                                                      alt="Отобразить график" class="icon ic_b_chart">&nbsp;Отобразить график</span></a>
     <span><a href="view_create.php?db=regist" class="create_view ajax"><span class="nowrap">
-                        <img src="img/b_props.png" title="Создать представление"alt="Создать представление" class="icon ic_b_view_add">&nbsp;Создать представление</span></a></span>
+                        <img src="img/b_props.png" title="Создать представление" alt="Создать представление"
+                             class="icon ic_b_view_add">&nbsp;Создать представление</span></a></span>
 </fieldset>
 <fieldset class="create-bookmark">
     <legend class="d-flex">
         <div class="create-bookmark-title">
-            <img src="img/s_host.png" alt="logo"> Создать закладку</div>
+            <img src="img/s_host.png" alt="logo"> Создать закладку
+        </div>
     </legend>
     <div class="d-flex">
         <div>Метка:</div>
@@ -1655,32 +1637,82 @@
 //     keyNum.push(lastItem + 1);
 //
 //     $('.app' + k).append(`
-//     <div class="card-block col-12">
-    //                         <div class="panel-group">
-    //                             <div class="panel panel-default">
-    //                                 <div onclick="cl(${numb})" class="panel-heading">
-    //                                     <div class="panel-title">
-    //                                         <a data-toggle="collapse" href="#collapselast${numb}">
-    //                                             <div class="title-style d-flex justify-content-start">
-    //                                                 <div class="title-style-div-one">
-    //                                                     <img class="img-icon" src="img/b_plus.png" alt="logo">
-    //                                                     <img class="img-icone" src="img/b_minus.png" alt="logo">
-    //                                                 </div>
-    //                                                 <div class="title-style-div-two">
-    //                                                     <img class="coll-db-logo" src="img/s_db.png" alt="logo">
-    //                                                 </div>
-    //                                                 <div class="info-text">
+//
+<div class="card-block col-12">
     //
-    //                                                   ${i.child[g].lt}
-    //                                                 </div>
-    //                                             </div>
-    //                                         </a>
-    //                                     </div>
-    //                                 </div>
-    //                                 <div id="collapselast${numb}" class="panel-collapse collapse">
-    //                                     <div class="collapse-after-div"> ${i.child[g].info}</div>
-    //                                 </div>
-    //                             </div>
-    //                         </div>
-    //                     </div>`)
+    <div class="panel-group">
+        //
+        <div class="panel panel-default">
+            //
+            <div onclick="cl(${numb})" class="panel-heading">
+                //
+                <div class="panel-title">
+                    // <a data-toggle="collapse" href="#collapselast${numb}">
+                    //
+                    <div class="title-style d-flex justify-content-start">
+                        //
+                        <div class="title-style-div-one">
+                            // <img class="img-icon" src="img/b_plus.png" alt="logo">
+                            // <img class="img-icone" src="img/b_minus.png" alt="logo">
+                            //
+                        </div>
+                        //
+                        <div class="title-style-div-two">
+                            // <img class="coll-db-logo" src="img/s_db.png" alt="logo">
+                            //
+                        </div>
+                        //
+                        <div class="info-text">
+                            //
+                            // ${i.child[g].lt}
+                            //
+                        </div>
+                        //
+                    </div>
+                    // </a>
+                    //
+                </div>
+                //
+            </div>
+            //
+            <div id="collapselast${numb}" class="panel-collapse collapse">
+                //
+                <div class="collapse-after-div"> ${i.child[g].info}</div>
+                //
+            </div>
+            //
+        </div>
+        //
+    </div>
+    //
+</div>`)
 // }
+
+<div class="card-block col-12 remove-data-${id}">
+    <div class="panel-group " data-id="${i.id}">
+        <div class="panel panel-default">
+            <div onclick="cl(${k})" class="panel-heading">
+                <div class="panel-title">
+                    <a id="boll${id}" data-toggle="collapse" href="#${i.id}">
+                        <div class="title-style indificetion d-flex justify-content-start">
+                            <div id="rem${i.id}" class="title-style-div-one">
+                                <img class="img-icon-two" src="img/b_plus.png" alt="logo">
+
+                            </div>
+                            <div class="title-style-div-two">
+                                <img class="coll-db-logo" src="img/s_db.png" alt="logo">
+                            </div>
+                            <div class="info-text">
+
+                                ${i.name}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div id="${i.id}" class="panel-collapse collapse append-divs">
+
+            </div>
+        </div>
+    </div>
+</div>

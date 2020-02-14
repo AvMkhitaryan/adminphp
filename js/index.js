@@ -1,28 +1,4 @@
 $(document).ready(function () {
-
-    // $(".card-header").click(function () {
-    //     if ($(this).find(".img-icon").css("display", "block")) {
-    //         $(this).find(".img-icone").css("display", "block");
-    //         $(this).find(".img-icon").css("display", "none");
-    //     } else {
-    //         $(this).find(".img-icone").css("display", "none");
-    //         $(this).find(".img-icon").css("display", "block");
-    //     }
-    // });
-    // function iconclick() {
-    //     $(".card-header").click(function () {
-    //         if ($(this).find(".img-icon-two")) {
-    //            $(this).find(".img-icon-two").remove();
-            // }
-                // else {
-            //     $(this).find(".img-icone-two").css("display", "none");
-            //     $(this).find(".img-icon").css("display", "block");
-            // }
-    //     });
-    // }
-
-
-
     $.ajax({
         url: "json/indexone.json",
         type: "GET",
@@ -57,63 +33,71 @@ $(document).ready(function () {
                 `);
             });
             setClickOnCollapse();
-            // iconclick();
         }
     });
 
     function setClickOnCollapse() {
         $('.collap').on('click', function () {
             let id = $(this).attr('data-id');
+            let bollVal = true;
+            if ($(this).hasClass("active-two-icon-minus")) {
+                $(this).removeClass("active-two-icon-minus");
+                bollVal = true;
+            } else {
+                $(this).addClass("active-two-icon-minus");
+                bollVal = false;
+            }
             $.ajax({
                 url: "json/collapsedlast.json",
                 type: "GET",
                 dataType: "json",
-                beforeSend:function(){
-                    $("#zrf"+id).children().remove();
-                    $("#zrf"+id).append(`<div class="icon-load"> <i class="fa fa-spinner spiner-icon fa-spin" aria-hidden="true"></i></div> `)
+                beforeSend: function () {
+                    $("#zrf" + id).children().remove();
+                    $("#zrf" + id).append(`<div class="icon-load"> <i class="fa fa-spinner spiner-icon fa-spin" aria-hidden="true"></i></div> `)
                 },
                 success: function (data) {
                     $('.remove-data-' + id).remove();
                     data.table.forEach((i, k) => {
                         if (id == i.db_id) {
                             $("#" + id).append(`
-                           <div class="card-block col-12 remove-data-${id}">
-                                    <div class="panel-group " data-id="${i.id}">
-                                        <div class="panel panel-default">
-                                            <div onclick="cl(${k})" class="panel-heading">
-                                                <div class="panel-title">
-                                                    <a data-toggle="collapse" href="#${i.id}">
-                                                        <div  class="title-style indificetion d-flex justify-content-start">
-                                                            <div id="rem${i.id}" class="title-style-div-one">
-                                                                <img class="img-icon-two" src="img/b_plus.png" alt="logo">
-                                                                <img class="img-icone-two" src="img/b_minus.png" alt="logo">
-                                                                
-                                                            </div>
-                                                            <div class="title-style-div-two">
-                                                                <img class="coll-db-logo" src="img/s_db.png" alt="logo">
-                                                            </div>
-                                                            <div class="info-text">
+<div class="card-block col-12 remove-data-${id}">
+    <div class="panel-group " data-id="${i.id}">
+        <div class="panel panel-default">
+            <div onclick="cl(${k})" class="panel-heading">
+                <div class="panel-title">
+                    <a id="boll${id}" data-toggle="collapse" href="#${i.id}">
+                        <div class="title-style indificetion d-flex justify-content-start">
+                            <div id="rem${i.id}" class="title-style-div-one">
+                                <img class="img-icon-two" src="img/b_plus.png" alt="logo">
 
-                                                              ${i.name}
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div id="${i.id}" class="panel-collapse collapse append-divs" >
-                                              
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                    `)
+                            </div>
+                            <div class="title-style-div-two">
+                                <img class="coll-db-logo" src="img/s_db.png" alt="logo">
+                            </div>
+                            <div class="info-text">
+
+                                ${i.name}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div id="${i.id}" class="panel-collapse collapse append-divs">
+
+            </div>
+        </div>
+    </div>
+</div>`)
                         }
                     });
                     setTimeout(function () {
-                        $("#zrf"+id).children().remove();
-                        $("#zrf"+id).append(`<img class="img-icon-two" src="img/b_plus.png" alt="logo">`);
-                    },300);
-
+                        $("#zrf" + id).children().remove();
+                        if (bollVal == true) {
+                            $("#zrf" + id).append(`<img class="img-icon-two" src="img/b_plus.png" alt="logo">`);
+                        } else {
+                            $("#zrf" + id).append(`<img class="img-icone-two" src="img/b_minus.png" alt="logo">`);
+                        }
+                    }, 300);
                 }
             });
         });
@@ -121,17 +105,25 @@ $(document).ready(function () {
 
     $(document).on('click', '.panel-group', function () {
         let idtwo = $(this).attr('data-id');
+        let boll = true;
+        if ($(this).hasClass("active-icon-minus")) {
+            $(this).removeClass("active-icon-minus");
+            boll = true;
+        } else {
+            $(this).addClass("active-icon-minus");
+            boll = false;
+        }
         $.ajax({
             url: "json/indexit.json",
             type: "GET",
             dataType: "json",
             beforeSend: function () {
-                $('#rem'+idtwo).children().remove();
-                $('#rem'+idtwo).append(`<div class="icon-load"> <i class="fa fa-spinner spiner-icon fa-spin" aria-hidden="true"></i></div> `)
+                $('#rem' + idtwo).children().remove();
+                $('#rem' + idtwo).append(`<div class="icon-load"> <i class="fa fa-spinner spiner-icon fa-spin" aria-hidden="true"></i></div> `)
             },
             success: function (data) {
                 $('.remove-zsd' + idtwo).remove();
-                data.indexObject.forEach((p, k) => {
+                data.indexObject.forEach((p) => {
                     if (idtwo == p.db_id) {
                         $('#' + idtwo).append(` <div class="indexit-json-info remove-zsd${idtwo}">
                                             <div>${p.nameone}</div>
@@ -140,10 +132,13 @@ $(document).ready(function () {
                     }
                 });
                 setTimeout(function () {
-                    $('#rem'+idtwo).children().remove();
-                    $('#rem'+idtwo).append(`<img class="img-icon-two" src="img/b_plus.png" alt="logo">`);
-                },300);
-
+                    $('#rem' + idtwo).children().remove();
+                    if (boll == true) {
+                        $('#rem' + idtwo).append(`<img class="img-icon-two" src="img/b_plus.png" alt="logo">`);
+                    } else {
+                        $('#rem' + idtwo).append(`<img class="img-icone-two" src="img/b_minus.png" alt="logo">`);
+                    }
+                }, 300);
             }
         })
     });
