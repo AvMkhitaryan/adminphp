@@ -119,7 +119,9 @@ $(document).ready(function () {
             dataType: "json",
             beforeSend: function () {
                 $('#rem' + idtwo).children().remove();
-                $('#rem' + idtwo).append(`<div class="icon-load"> <i class="fa fa-spinner spiner-icon fa-spin" aria-hidden="true"></i></div> `)
+                if (boll == false) {
+                    $('#rem' + idtwo).append(`<div class="icon-load"> <i class="fa fa-spinner spiner-icon fa-spin" aria-hidden="true"></i></div> `)
+                }
             },
             success: function (data) {
                 $('.remove-zsd' + idtwo).remove();
@@ -131,14 +133,16 @@ $(document).ready(function () {
                                         </div>`)
                     }
                 });
-                setTimeout(function () {
-                    $('#rem' + idtwo).children().remove();
-                    if (boll == true) {
-                        $('#rem' + idtwo).append(`<img class="img-icon-two" src="img/b_plus.png" alt="logo">`);
-                    } else {
+                if (boll == false) {
+                    setTimeout(function () {
+                        $('#rem' + idtwo).children().remove();
                         $('#rem' + idtwo).append(`<img class="img-icone-two" src="img/b_minus.png" alt="logo">`);
-                    }
-                }, 300);
+                    }, 300);
+                } else {
+                    $('#rem' + idtwo).children().remove();
+                    $('#rem' + idtwo).append(`<img class="img-icon-two" src="img/b_plus.png" alt="logo">`);
+                }
+
             }
         })
     });
